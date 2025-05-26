@@ -3,7 +3,7 @@ const BASE_URL = "http://127.0.0.1:5000";
  
     function getAll(callback){
         $.ajax({
-            "url": BASE_URL+"/books/",
+            "url": BASE_URL+"/books",
             "method":"GET",
             "data":"",
             "dataType": "JSON",
@@ -23,7 +23,7 @@ const BASE_URL = "http://127.0.0.1:5000";
     function createBook(book, callback){
         console.log(JSON.stringify(book));
         $.ajax({
-            "url": BASE_URL+"/books/",
+            "url": BASE_URL+"/books",
             "method":"POST",
             "data":JSON.stringify(book),
             "dataType": "JSON",
