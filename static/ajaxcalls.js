@@ -1,8 +1,9 @@
-
+//easier method of changing the url for all functions (set to local url by default)
+const BASE_URL = "http://127.0.0.1:5000"; 
  
     function getAll(callback){
         $.ajax({
-            "url": "https://samedo1999.pythonanywhere.com/books",
+            "url": BASE_URL+"/books/",
             "method":"GET",
             "data":"",
             "dataType": "JSON",
@@ -22,7 +23,7 @@
     function createBook(book, callback){
         console.log(JSON.stringify(book));
         $.ajax({
-            "url": "https://samedo1999.pythonanywhere.com/books",
+            "url": BASE_URL+"/books/",
             "method":"POST",
             "data":JSON.stringify(book),
             "dataType": "JSON",
@@ -40,7 +41,7 @@
     function updateBook(book, callback){
         console.log("updateing " +JSON.stringify(book));
         $.ajax({
-            "url": "https://samedo1999.pythonanywhere.com/books/"+encodeURI(book.id),
+            "url": BASE_URL+"/books/"+encodeURI(book.id),
             "method":"PUT",
             "data":JSON.stringify(book),
             "dataType": "JSON",
@@ -56,7 +57,7 @@
     }
     function deleteBook(id, callback){
         $.ajax({
-            "url": "https://samedo1999.pythonanywhere.com/books/"+id,
+            "url": BASE_URL+"/books/"+id,
             "method":"DELETE",
             "data":"",
             "dataType": "JSON",
@@ -74,7 +75,7 @@
 
 function getBookById(id, callback, errorCallback) {
     $.ajax({
-        url: "https://samedo1999.pythonanywhere.com/books/"+id,
+        url: BASE_URL+"/books/"+id,
         method: "GET",
         dataType: "json",
         success: function(book) {
